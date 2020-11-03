@@ -1,0 +1,237 @@
+// --------------------
+// Header
+// --------------------
+
+.l-header {
+
+}
+
+.nav-fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  z-index: 999;
+  background: $color-white;
+
+  .header-wrapper-pc{
+    //.img-logo-wrapper:before{
+    //  content: url("/assets/images/header-logo.png") !important;
+    //}
+
+    .nav-menu-wrapper{
+      ul{
+        li{
+          a{
+            color: $color-dark-gray !important;
+          }
+        }
+      }
+
+      .ic-account{
+        margin: 0 49px 0 36px;
+        &:before{
+          content: url("/assets/images/icon/account.png") !important;
+        }
+      }
+
+      .ic-cart:before{
+        content: url("/assets/images/icon/cart.png") !important;
+      }
+
+    }
+
+
+
+  }
+
+  .header-wrapper-sp{
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+    padding: 25px;
+    .btn-menu{
+      background: none;
+    }
+    .ic-cart-menu{
+      content: url("/assets/images/icon/ic-cart-menu.png");
+      width: 25px;
+    }
+    .ic-menu{
+      content: url("/assets/images/icon/ic-menu.png");
+      width: 25px;
+    }
+    .ic-menu-close{
+      content: url("/assets/images/icon/ic-menu-close.png");
+      width: 25px;
+    }
+    .top-logo{
+      content: url("/assets/images/top-logo-sp.png");
+      width: 100px;
+    }
+  }
+
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+}
+
+.header-wrapper-pc{
+  @include flexbox();
+  @include justify-content(space-between);
+  @include align-items(center);
+  max-width: 1306px;
+  height: 118px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  .header-logo {
+    flex: none;
+    margin-right: 20px;
+  }
+
+  .nav-menu-wrapper{
+    @include flexbox();
+    @include align-items(center);
+
+    ul{
+      @include flexbox();
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      li{
+        margin: 3px 23px;
+        @include fs(15,26);
+        letter-spacing: 0.06em;
+      }
+    }
+    a{
+      cursor: pointer;
+      color: $color-dark-gray;
+    }
+
+    .ic-account{
+      margin: 0 49px 0 36px;
+      &:before{
+        content: url("/assets/images/icon/account.png");
+      }
+    }
+
+    .ic-cart:before{
+      content: url("/assets/images/icon/cart.png");
+    }
+  }
+  .img-logo-wrapper:before{
+    content: url("/assets/images/header-logo.png");
+  }
+}
+
+.header-wrapper-sp{
+  @include flexbox();
+  @include justify-content(space-between);
+  @include align-items(center);
+  padding: 25px;
+  .btn-menu{
+    background: none;
+  }
+  .ic-cart-menu{
+    content: url("/assets/images/icon/ic-cart-menu-white.png");
+    width: 25px;
+  }
+  .ic-menu{
+    content: url("/assets/images/icon/ic-menu-white.png");
+    width: 25px;
+  }
+  .top-logo{
+    content: url("/assets/images/top-logo-white-sp.png");
+    width: 100px;
+  }
+}
+
+
+.main{
+  padding-top: 118px;
+  @include bp(tab){
+    padding-top: 107px;
+  }
+}
+
+.top-page-wrapper{
+  .nav-menu-wrapper{
+    ul{
+      li{
+        a{
+          color: $color-white;
+        }
+      }
+    }
+
+    .ic-account{
+      margin: 0 49px 0 36px;
+      &:before{
+        content: url("/assets/images/icon/ic-white-account.png") !important;
+      }
+    }
+
+    .ic-cart:before{
+      content: url("/assets/images/icon/ic-white-cart.png") !important;
+    }
+  }
+
+  .img-logo-wrapper{
+    top: 26.2px !important;
+    position: absolute !important;
+  }
+}
+
+.overlay {
+  height: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: $color-white;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.nav-menu-wrapper-sp{
+  margin-top: 70px;
+  .nav-menu-link{
+    @include flexbox();
+    @include flex-direction(column);
+    @include align-items(center);
+    .nav-menu-item{
+      margin-bottom: 40px;
+      a{
+        color: $color-dark-gray;
+      }
+    }
+    .nav-menu-item__login{
+      margin-top: 20px;
+    }
+  }
+}
+
+.login{
+  border-bottom: solid 1px $color-dark-gray;
+  padding: 0 20px 12px 20px;
+  &:before{
+    content: url("/assets/images/icon/account.png");
+    margin-right: 17px;
+  }
+}
+
+.header-logo-sp{
+  width: 100px;
+}
+
+#top-header-logo-pc{
+  margin-top: 26px;
+}

@@ -1,0 +1,32 @@
+html[lang] {
+  overflow-x: auto;
+  @include bp(tab) {
+    margin-top: 0 !important;
+  }
+}
+
+body {
+  width: 100%;
+  color: $color-font-base;
+  font-size: 16px;
+  line-height: 1.875; // 30px
+  font-family: $font-family-base;
+  -webkit-text-size-adjust: 100%;
+  letter-spacing: 0.1em;
+}
+
+// body {
+  // font-size: $global-font-size;
+  // @include bp(pc) {
+  //   min-width: $container-width;
+  // }
+// }
+
+a {
+  @include transition(0.2s all ease);
+}
+input,
+button {
+  outline: none;
+}
+

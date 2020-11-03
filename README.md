@@ -1,30 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project Name: 
+Framework: ReactJS
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+You need to install all of this before moving to next step.
 
-### `yarn start`
+* [Git](http://git-scm.com/)
+* [ReactJS](#)
 
-Runs the app in the development mode.<br />
+## Installation 
 
-### `yarn lint`
-
-Check problematic patterns
-
-### `yarn build:dev`
-
-Create an optimized build application on development environment.
-
-### `yarn build:stg`
-
-Create an optimized build application on staging environment.
-
-### `yarn build:pro`
-
-Create an optimized build application on production environment.
-
-### `yarn serve`
-
-Serve build folder (using serve package)
-
+1. Create local environment file using sample file `cp  .env-example  .env`
+2. Install package & run: `yarn & yarn start`

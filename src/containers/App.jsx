@@ -26,7 +26,7 @@ const App = (...props) => {
         <div className="content-wrapper">
             <BrowserRouter>
                 <Switch>
-                    <Route path="/list-user" component={ListUser} />
+                    <Route path="/" component={ListUser} />
                     <Route path="/state-eg" component={StateEg} />
                 </Switch>
             </BrowserRouter>

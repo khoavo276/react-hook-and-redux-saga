@@ -1,0 +1,365 @@
+// @import "compass";
+@charset "utf-8";
+
+// braakpoint settings ------------------------------
+@mixin bp($bp_1: 0, $bp_2: 0) {
+  $bp_main: 540;
+  $bp_sub: 768;
+
+  @if $bp_1== "sp" {
+    @media (max-width: #{$bp_main}px) {
+      @content;
+    }
+  }
+
+  @elseif $bp_1=='tab' {
+    @media (max-width: #{$bp_sub}px) {
+      @content;
+    }
+  }
+
+  @elseif $bp_1=='pc' {
+    @media (min-width: #{$bp_sub + 1}px) {
+      @content;
+    }
+  }
+
+  @elseif $bp_1=='ls' {
+    @media (orientation: landscape) {
+      @content;
+    }
+  }
+
+  @elseif $bp_1=='pt' {
+    @media (orientation: portrait) {
+      @content;
+    }
+  }
+
+ @else {
+    @if $bp_1 !=0 and $bp_2 !=0 {
+      @media (min-width: $bp_1) and (max-width: $bp_2) {
+        @content;
+      }
+    }
+
+    @elseif $bp_1==0 {
+      @media (max-width: $bp_2) {
+        @content;
+      }
+    }
+
+    @elseif $bp_2==0 {
+      @media (min-width: $bp_1) {
+        @content;
+      }
+    }
+  }
+}
+
+// common mixins ------------------------------
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+/*get vw*/
+@function setvw($target, $base: 750) {
+	$vw: ($base * 0.01) * 1px;
+	@return ($target / $vw) * 1vw;
+}
+
+/*get percent*/
+@function set_per($target, $parent) {
+	@return ($target * 100%) / $parent;
+}
+
+@mixin fs($fontsize: 16, $lineheight: 26, $base: 16) {
+  font-size: $fontsize + px;
+  font-size: ($fontsize / $base) * 1rem;
+  line-height: ceil($lineheight * 1000 / $fontsize) / 1000;
+}
+
+@mixin fs-vw($fontsize: 16, $lineheight: 26, $area-width: 640) {
+  font-size: #{($fontsize / $area-width) * 100}vw;
+  line-height: ceil($lineheight * 1000 / $fontsize) / 1000;
+}
+
+@mixin fontanti {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin backgroundsize($w: auto, $h: auto) {
+  -webkit-background-size: $w $h;
+  background-size: $w $h;
+}
+
+@mixin transition($options: 0.4s all ease) {
+  -webkit-transition: ($options);
+  transition: ($options);
+}
+
+@mixin transform($options) {
+  -webkit-transform: ($options);
+  transform: ($options);
+  -ms-transform: ($options);
+}
+
+@mixin animation($options) {
+  -webkit-animation: ($options);
+  animation: ($options);
+}
+
+@mixin hover-op {
+  @include transition(0.2s opacity);
+
+  &:hover {
+    @include opacity(0.75);
+  }
+}
+
+@mixin hover-color($color: $color-point) {
+  .pc & {
+    @include transition(0.2s color ease);
+
+    &:hover {
+      color: $color;
+    }
+  }
+}
+
+@mixin hover-bgcolor($color: $color-point) {
+  .pc & {
+    @include transition(0.2s background-color ease);
+
+    &:hover {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin fieldstyle-reset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: $color-font-base;
+  font-family: $font-family-base;
+  font-size: inherit;
+  vertical-align: middle;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+@mixin coverAll($pos: absolute) {
+  position: $pos;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin posCenter() {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+@mixin posCenterV() {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+
+  @include transform(translateY(-50%));
+}
+
+@mixin posCenterR() {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 100%;
+
+  @include transform(translateY(-50%));
+}
+
+@mixin bgContain() {
+  background: no-repeat center center;
+  background-size: contain;
+}
+
+@mixin bgCover() {
+  background: no-repeat center center;
+  background-size: cover;
+}
+
+@mixin background-gradient($color_1, $color_2) {
+  background: $color_1;
+  background: -moz-linear-gradient(left, $color_1 0%, $color_2 100%);
+  background: -webkit-linear-gradient(left, $color_1 0%, $color_2 100%);
+  background: linear-gradient(to right, $color_1 0%, $color_1 0%, $color_2 100%);
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='$color_1', endColorstr='$color_2', GradientType=1);
+}
+@mixin background-gradient-2($color_1, $ratio_1, $color_2, $ratio_2, $color_3, $ratio_3) {
+  background-image: -moz-linear-gradient( -180deg, $color_1 $ratio_1, $color_2 $ratio_2, $color_3 $ratio_3);
+  background-image: -webkit-linear-gradient( -180deg, $color_1 $ratio_1, $color_2 $ratio_2, $color_3 $ratio_3);
+}
+
+@mixin block($w: 100%) {
+  width: $w;
+  float: left;
+}
+
+@mixin position($p, $top, $right, $bottom, $left, $zindex: 1) {
+  position: $p;
+
+  @if $top != "" {
+    top: $top;
+  }
+
+  @if $right != "" {
+    right: $right;
+  }
+
+  @if $bottom != "" {
+    bottom: $bottom;
+  }
+
+  @if $left != "" {
+    left: $left;
+  }
+
+  z-index: $zindex;
+}
+
+@mixin font($size: 0, $fw: 0, $color: 0, $under: 0, $up: 0, $line: 0) {
+  @if $size != 0 {
+    font-size: $size;
+  }
+
+  @if $fw != 0 {
+    font-weight: $fw;
+  }
+
+  @if $color != 0 {
+    color: $color;
+  }
+
+  @if $under != 0 {
+    text-decoration: underline;
+  }
+
+  @if $up != 0 {
+    text-transform: uppercase;
+  }
+
+  @if $line != 0 {
+    line-height: $line;
+  }
+}
+
+@mixin radius($options) {
+  -ms-border-radius: ($options);
+  -moz-border-radius: ($options);
+  -webkit-border-radius: ($options);
+  border-radius: ($options);
+}
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+  -moz-justify-content: $justify;
+  -ms-justify-content: $justify;
+  justify-content: $justify;
+  -ms-flex-pack: $justify;
+}
+
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+  -moz-align-items: $align;
+  -ms-align-items: $align;
+  align-items: $align;
+}
+
+@mixin flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+  }
+
+ @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+  }
+
+ @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+  }
+
+ @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+  }
+
+  -webkit-flex-direction: $value;
+  -moz-flex-direction: $value;
+  -ms-flex-direction: $value;
+  flex-direction: $value;
+}
+
+@mixin flex-wrap($option) {
+  -webkit-flex-wrap: $option;
+  -ms-flex-wrap: $option;
+  flex-wrap: $option;
+}
+
+@mixin box-shadow($value, $color) {
+  -webkit-box-shadow: $value $color;
+  -moz-box-shadow: $value $color;
+  box-shadow: $value $color;
+}
+
+@mixin placeholder {
+  &::placeholder {
+      @content;
+  }
+  &:-ms-input-placeholder { // for IE11
+      @content;
+  }
+}
+
+.only-pc {
+  @include bp(tab) {
+    display: none !important;
+  }
+}
+
+.only-sp {
+  @include bp(pc) {
+    display: none !important;
+  }
+}
+
+@mixin breakpoint($point) {
+  @media (min-width: $point) {
+    @content;
+  }
+}

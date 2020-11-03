@@ -1,0 +1,33 @@
+// --------------------
+// Global Variables
+// --------------------
+$global-font-size: 16px;
+$font-family-base: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+$font-family-en: 'Cormorant Infant', serif;
+
+$container-width: 1240px;
+$container-inside: 1200px;
+
+// --------------------
+// Global Colors
+// --------------------
+$color-font-base: #000000;
+$color-gray: #F4F5F5;
+$color-white: #ffffff;
+$color-dark-gray: #686C6E;
+$color-border: #707070;
+$color-light-gray: #AAADAF;
+$color-light-plus-gray: #CBCBCB;
+$color-dark-blue: #0C1B1E;
+$color-cream: #EDEAE0;
+$color-border-bottom: #91999D;
+$color-rose: #EA6060;
+$color-dark-gray-plus:#585E60;
+$color-tag: #ECEFEF;
+
+// ======= # DEVICE BREAKPOINT # ======= //
+$breakpoint-sm: 540px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 860px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1366px;

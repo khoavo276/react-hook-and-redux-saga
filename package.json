@@ -2,7 +2,7 @@
   "name": "react-hook-with-saga-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://khoavo276.github.io/react-hook-and-redux-saga/",
+  "homepage": "",
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.3.1",
@@ -12,6 +12,7 @@
     "i18next": "^15.0.4",
     "i18next-browser-languagedetector": "^3.0.1",
     "node-sass": "^4.13.0",
+    "prettier": "^2.1.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-i18next": "^8.4.0",

@@ -10,6 +10,7 @@ import { I18nextProvider } from 'react-i18next';
 import {LocalizeProvider} from 'react-localize-redux';
 
 import i18n from './i18n';
+import './assets/scss/main.scss'
 
 ReactDOM.render(
     <LocalizeProvider>
