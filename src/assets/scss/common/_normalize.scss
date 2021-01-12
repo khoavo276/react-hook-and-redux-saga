@@ -1,8 +1,8 @@
 html[lang] {
   overflow-x: auto;
-  @include bp(tab) {
-    margin-top: 0 !important;
-  }
+  // @include bp(tab) {
+  //   margin-top: 0 !important;
+  // }
 }
 
 body {
@@ -22,11 +22,11 @@ body {
   // }
 // }
 
-a {
-  @include transition(0.2s all ease);
-}
-input,
-button {
-  outline: none;
-}
+  a {
+    @include transition(0.2s all ease);
+  }
+  input,
+  button {
+    outline: none;
+  }
 
