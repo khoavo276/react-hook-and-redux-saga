@@ -1,0 +1,18 @@
+{
+  "defaultSeverity": "warning",
+  "extends": ["stylelint-config-standard", "stylelint-config-property-sort-order-smacss"],
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "indentation": 2,
+    "declaration-colon-newline-after": null,
+    "value-list-comma-newline-after": "never-multi-line",
+    "at-rule-no-unknown": null,
+    "no-empty-source": null,
+    "block-no-empty": null,
+    "no-duplicate-selectors": null,
+    "no-descending-specificity": null,
+    "selector-pseudo-element-no-unknown": [true, {"ignorePseudoElements":["v-deep"]}]
+  }
+}
