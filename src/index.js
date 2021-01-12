@@ -11,6 +11,7 @@ import {LocalizeProvider} from 'react-localize-redux';
 
 import i18n from './i18n';
 import './assets/scss/main.scss'
+import '@fortawesome/fontawesome-free/js/all.js';
 
 ReactDOM.render(
     <LocalizeProvider>

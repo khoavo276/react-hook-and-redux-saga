@@ -4,6 +4,10 @@
   "private": true,
   "homepage": "",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "axios": "^0.19.2",
     "bootstrap": "^4.3.1",
     "eslint-plugin-react-hooks": "^0.0.0-b53ea6ca0",
