@@ -1,3 +1,23 @@
 .test-button {
   background: #ea6060;
 }
+
+.c-btn_profile {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  background: none !important;
+
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+.c-dropdown_item {
+  padding: 0 !important;
+}
+
+.dropdown-menu {
+  // margin-bottom: 0 !important;
+}

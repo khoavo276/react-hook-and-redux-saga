@@ -1,6 +1,34 @@
 .p-header {
+  p {
+    margin-bottom: 0;
+  }
+
   h2 {
     font-size: 30px;
     font-weight: bold;
+  }
+
+  .c-dropEmail {
+    .dropdown-menu {
+      top: 22px !important;
+      left: -150px;
+      width: 300px !important;
+    }
+
+    .drop_item {
+      width: calc(100% - 24px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .nav-link {
+      height: auto !important;
+    }
+
+    &_avt {
+      width: 40px;
+      height: 40px;
+    }
   }
 }

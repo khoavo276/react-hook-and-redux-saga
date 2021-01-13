@@ -1,4 +1,4 @@
-.container{
+.container {
   position: relative;
   width: 100%;
   max-width: $container-width;
@@ -7,6 +7,22 @@
 }
 
 @mixin padding-inner-content {
-  padding-left: 4.167%;
   padding-right: 4.167%;
+  padding-left: 4.167%;
+}
+
+.bg-gradient-primary {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.content-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: scroll;
+}
+
+.l-pageContent {
+  min-height: calc(100vh - 4.375rem - 76px);
 }

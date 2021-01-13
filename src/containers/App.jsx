@@ -9,7 +9,10 @@ import Top from './page/Top';
 import Toast from '../components/Toast';
 import enTranslation from '../i18n/translation/en.js';
 import viTranslation from '../i18n/translation/vi.js';
-import Layout from '../layout/default';
+import Login from './page/Login/index';
+import Register from './page/Register/index';
+import ForgotPass from './page/ForgotPass/index';
+import Table from './page/Table/index';
 
 const App = (...props) => {
   useEffect(() => {
@@ -25,11 +28,13 @@ const App = (...props) => {
     <div className="content-wrapper">
       <BrowserRouter>
         <Switch>
-          <Layout>
-            <Route  exact path="/list" component={ListUser} />
-            <Route exact path="/" component={Top} />
-          </Layout>
-          <Route path="/state-eg" component={StateEg} />
+          <Route exact path="/list" component={ListUser} />
+          <Route exact path="/" component={Top} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/state-eg" component={StateEg} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/forgot-password" component={ForgotPass} />
+          <Route exact path="/table" component={Table} />
         </Switch>
       </BrowserRouter>
       <Toast />

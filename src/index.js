@@ -10,8 +10,9 @@ import { I18nextProvider } from 'react-i18next';
 import {LocalizeProvider} from 'react-localize-redux';
 
 import i18n from './i18n';
-import './assets/scss/main.scss'
+import './assets/scss/main.scss';
 import '@fortawesome/fontawesome-free/js/all.js';
+import './assets/css/sb-admin-2.min.css';
 
 ReactDOM.render(
     <LocalizeProvider>
